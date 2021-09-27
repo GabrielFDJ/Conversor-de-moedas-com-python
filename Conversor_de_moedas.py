@@ -72,5 +72,17 @@ while True:
         except:
             mensagem_de_erro()  
       
+    formatacao_titulo('RESULTADO DA CONVERSÃO...')
+    result = c.convert(cod_moeda_inicial, cod_moeda_cambio, valor_inicial)
+    simbolo_moeda = cd.get_symbol(cod_moeda_inicial)
+    simbolo_moeda_cambio = cd.get_symbol(cod_moeda_cambio)
+    result = round(result,2)
+    print(f'{cod_moeda_inicial} - {simbolo_moeda} - {valor_inicial} = {cod_moeda_cambio} - {simbolo_moeda_cambio} - {result}')    
+
+    formatacao_titulo('SE DESEJA SAIR DIGITE 0 , PARA CONTINUAR QUALQUER OUTRO VALOR : ')
+    opcao = int(input())    
+    if(opcao == 0):
+        formatacao_titulo("PROGRAMA ENCERRADO")       
+        break
 
 
